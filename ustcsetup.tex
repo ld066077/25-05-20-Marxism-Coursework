@@ -1,12 +1,29 @@
 % !TeX root = ./main.tex
 
 \ustcsetup{
-  title*              = {xxxxxxxxxxxxxxxxxxxx},
-  author*             = {xxx},
-  speciality*         = {xxx},
-  student-id         = {xxx},
+  title              = {xxxx研究},
+  title*             = {An example of thesis template for University of Science
+                        and Technology of China v\ustcthesisversion},
+  author             = {xxx},
+  student-id         = {BA24048},
+  author*            = {Li Zeping},
+  speciality         = {等离子体物理},
+  speciality*        = {Mathematics and Applied Mathematics},
+  supervisor         = {XXX~教授, XXX~教授},
+  supervisor*        = {Prof. XXX, Prof. XXX},
   % date               = {2017-05-01},  % 默认为今日
-  language           = chinese,  % 设置主语言为英文
+  % professional-type  = {专业学位类型},
+  % professional-type* = {Professional degree type},
+  % department         = {数学科学学院},  % 院系，本科生需要填写
+  % student-id         = {PB11001000},  % 学号，本科生需要填写
+  % secret-level       = {秘密},     % 绝密|机密|秘密|控阅，注释本行则公开
+  % secret-level*      = {Secret},  % Top secret | Highly secret | Secret
+  % secret-year        = {10},      % 保密/控阅期限
+  % reviewer           = true,      % 声明页显示“评审专家签名”
+  %
+  % 数学字体
+  % math-style         = GB,  % 可选：GB, TeX, ISO
+  math-font          = xits,  % 可选：stix, xits, libertinus
 }
 
 
@@ -32,8 +49,8 @@
 
 % 参考文献使用 BibTeX + natbib 宏包
 % 顺序编码制
-\usepackage[numbers,super]{natbib}
-% \bibliographystyle{plain}  % 使用自定义的引用样式
+\usepackage[sort]{natbib}
+\bibliographystyle{ustcthesis-numerical}
 
 % 著者-出版年制
 % \usepackage{natbib}

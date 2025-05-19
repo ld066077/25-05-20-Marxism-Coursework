@@ -26,7 +26,7 @@
 \@ifl@t@r\fmtversion{2017/04/15}{}{
   \ustc@error{%
     TeX Live 2017 or later version is required to compile this document%
-  }%
+  }
 }
 
 % 检查编译引擎，要求使用 XeLaTeX 或 LuaLaTeX。
@@ -76,7 +76,7 @@
 \kv@set@family@handler{ustc@key}{%
 %
 % \cs{ustcsetup} 会将 \meta{value} 存到 \cs{ustc@\meta{key}}，
-% 但是宏的名字包含 "-" 这样的特殊字符时不方便直接调用，比如 |key = math-style|，
+% 但是宏的名字包含 “-” 这样的特殊字符时不方便直接调用，比如 |key = math-style|，
 % 这时可以用 |name| 设置 \meta{key} 的别称，比如 |key = math@style|，
 % 这样就可以通过 \cs{ustc@math@style} 来引用。
 % |default| 是定义该 \meta{key} 时默认的值，缺省为空。
@@ -557,8 +557,8 @@
 % 根据语言设置各章节的名称，只有在导言区设置 \option{language} 时会修改，
 % 而在正文局部切换语言时则不变。
 
-% 由于《撰写手册》中的"speciality"一词使用的是英式拼法，
-% 所以"acknowledgements"也保持一致。
+% 由于《撰写手册》中的“speciality”一词使用的是英式拼法，
+% 所以“acknowledgements”也保持一致。
 \newcommand\ustc@set@chapter@names{%
   \ifustc@main@language@chinese
     \def\contentsname{目录}%
@@ -996,7 +996,7 @@
 }
 
 % 思源字体。
-% 注意 Noto CJK 的 regular 字重名字不带"Regular"。
+% 注意 Noto CJK 的 regular 字重名字不带“Regular”。
 \newcommand\ustc@set@cjk@font@noto{%
   \defaultCJKfontfeatures{}%
   \setCJKmainfont{Noto Serif CJK SC}[
@@ -1565,7 +1565,7 @@
   \else
     %
     % 本科生要求除封面、扉页外，每面上部加页眉，
-    % 用小 5 号字（9 bp）标注"中国科学技术大学本科毕业论文"，居中；
+    % 用小 5 号字（9 bp）标注“中国科学技术大学本科毕业论文”，居中；
     % 从目录页开始在每面底部居中用小五宋体（9 bp）连续编页码。
     \def\ustc@hf@font{\fontsize{9bp}{12bp}\selectfont}
     \fancyhead[C]{\ustc@hf@font 中国科学技术大学本科毕业论文}%
@@ -1603,7 +1603,7 @@
 }
 
 %
-% 研究生要求从"中文摘要"开始页码用大写罗马数字，
+% 研究生要求从“中文摘要”开始页码用大写罗马数字，
 % 而本科生的 frontmatter（只有致谢）不编页码，从目录开始页码用阿拉伯数字。
 \renewcommand\frontmatter{%
   \cleardoublepage
@@ -1616,7 +1616,7 @@
   \fi
 }
 
-% 研究生要求"第 1 章"要另页起，但是本科生要求另面起。
+% 研究生要求“第 1 章”要另页起，但是本科生要求另面起。
 \renewcommand\mainmatter{%
   \cleardoublepage
   \ifustc@degree@graduate
@@ -1791,8 +1791,8 @@
 
 % 定义一些常量。
 \ifustc@degree@doctor
-  \newcommand\ustc@thesis@name{博士学位论文}
-  \newcommand\ustc@thesis@name@en{Research Proposal}
+  \newcommand\ustc@thesis@name{课程论文}
+  \newcommand\ustc@thesis@name@en{A dissertation for doctor's degree}
 \else
   \ifustc@degree@master
     \newcommand\ustc@thesis@name{硕士学位论文}
@@ -1852,7 +1852,7 @@
 % 论文类型黑体 56 磅；
 % 论文题目黑体 26 磅加粗居中，单倍行距；
 % 作者姓名宋体 16 磅，单倍行距；
-% 注意这里的"单倍行距"的地方开启了"对齐到网格"，所以实际行距有所偏差，
+% 注意这里的“单倍行距”的地方开启了“对齐到网格”，所以实际行距有所偏差，
 % 所以只能使用直尺测量。
 \newcommand\ustc@speciality@sse{软件工程}
 \newcommand\ustc@title@page@graduate@zh{%
@@ -1897,13 +1897,14 @@
     {\fontsize{16bp}{31bp}\selectfont
       \begin{tabular}{@{}l@{\hspace{\ccwd}}l@{}}%
         \textsf{作者姓名：} & \ustc@author \\
+        \textsf{作者学号：} & \ustc@student@id \\
         \textsf{\ustc@speciality@name：} & \ustc@speciality \\
-        \ifx\ustc@advisor\@empty
-          \textsf{导师姓名：} & \ustc@supervisor@names \\
-        \else
-          \textsf{校内导师：} & \ustc@supervisor@names \\
-          \textsf{企业导师：} & \ustc@advisor@names \\
-        \fi
+        % \ifx\ustc@advisor\@empty
+          % \textsf{导师姓名：} & \ustc@supervisor@names \\
+        % \else
+          % \textsf{校内导师：} & \ustc@supervisor@names \\
+          % \textsf{企业导师：} & \ustc@advisor@names \\
+        % \fi
         \textsf{完成时间：} & \ustc@date@zh@big
       \end{tabular}\par}%
   \end{titlepage}%
@@ -1950,8 +1951,12 @@
     {\fontsize{16bp}{30bp}\selectfont
       \begin{tabular}{@{}l@{}}%
         Author:        \ustc@author@en \\
-        Student ID:    \ustc@student@id \\
         Speciality:    \ustc@speciality@en \\
+        \ustc@supervisor@en@line \\
+        \ifx\ustc@advisor\@empty
+        \else
+          \ustc@advisor@en@line \\
+        \fi
         Finished time: \ustc@date@en
       \end{tabular}\par}%
   \end{titlepage}%
@@ -2030,13 +2035,15 @@
   \end{titlepage}%
 }
 
-% 重新定义 \maketitle，只生成英文封面
+% 重新定义 \cs{maketitle}，调用 \cs{ustc@makezhtitle}, \cs{ustc@makeentitle}
+% 分别生成中、英文封面。
 \renewcommand\maketitle{%
   \newgeometry{margin=2.54cm}%
   \pagenumbering{Alph}%
   \pagestyle{empty}%
   \ifustc@degree@graduate
-    \ustc@title@page@graduate@en
+    \ustc@title@page@graduate@zh
+    % \ustc@title@page@graduate@en
   \else
     \ustc@title@page@bachelor
   \fi
@@ -2082,7 +2089,7 @@
         \rmfamily    % 使用 Times New Roman
         Copyright\\[5pt]
         by\\[5pt]
-        \href{mailto:liyx@mail.ustc.edu.cn}{\ustc@author@en}\\[5pt]
+        \href{mailto:324refwd23mail.ustc.edu.cn}{\ustc@author@en}\\[5pt]
         \the\year 
         %\ifcase\month\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi  % 显示年份和月份
       \end{center}
@@ -2140,7 +2147,7 @@
 % 各章标题：黑体 16 磅加粗居中，单倍行距，段前 24 磅，段后 18 磅，
 % 章序号与章名间空一字。
 
-% 由于 Word 模板中使用"单倍行距"，还"对齐到网格"，这在 TeX 中不容易实现。
+% 由于 Word 模板中使用“单倍行距”，还“对齐到网格”，这在 TeX 中不容易实现。
 % 所以目前按照默认的行距。
 
 % 注意 \pkg{ctex} v2.4.3 以下版本的bug会导致章节标题前后的距离的实际值偏大。
@@ -2309,60 +2316,26 @@
     \ustc@clist@use{\ustc@keywords}{、}%
   \fi
 }
+\newenvironment{abstract}{%
+  \ustcsetup{language=chinese}%
+  \ustc@chapter{摘要}%
+}{
+  \par\null\par\noindent\hangindent=4\ccwd\relax
+  \textbf{关键词}：\ustc@keywords@text\par
+  \ustc@reset@main@language
+}
+
+% 英文摘要环境。
 \newcommand\ustc@keywords@en@text{%
   \ustc@clist@use{\ustc@keywords@en}{, }%
 }
-\newenvironment{abstract}{%
-  \cleardoublepage
-  \pagenumbering{roman}
-  \ifustc@degree@graduate
-    \ustc@chapter[Abstract]{ABSTRACT}%
-  \else
-    \begingroup
-      % 本科生的英文摘要使用小二号衬线体
-      \ctexset{chapter/format=\centering\fontsize{18bp}{33bp}\selectfont}%
-      \ustc@chapter{ABSTRACT}%
-    \endgroup
-  \fi
-}{
-  \par\null\par\noindent
-  \textbf{Keywords}: \ustc@keywords@text\par
-  \ifustc@degree@graduate
-    \cleardoublepage
-  \fi
-}
-
-\newbox\ustc@keywords@box
-\newlength\ustc@keywords@width
-
-% 英文摘要环境
 \newenvironment{abstract*}{%
   \ustcsetup{language=english}%
-  \ifustc@degree@graduate
-    \ustc@chapter[Abstract]{ABSTRACT}%
-  \else
-    \begingroup
-      % 本科生的英文摘要使用小二号衬线体
-      \ctexset{chapter/format=\centering\fontsize{18bp}{33bp}\selectfont}%
-      \ustc@chapter{ABSTRACT}%
-    \endgroup
-  \fi
+  \ustc@chapter{Abstract}%
 }{
-  \par\null\par\noindent
-  \savebox\ustc@keywords@box{\textbf{Key Words}: }%
-  \ustc@keywords@width=\linewidth
-  \advance\ustc@keywords@width-\wd\ustc@keywords@box
-  \textbf{Key Words}: \parbox[t]{\ustc@keywords@width}{\ustc@keywords@en@text\par}\par
-  \ifustc@degree@graduate
-    \cleardoublepage
-  \fi
-}
-
-% Reserved for compatibility until 2020-07-01.
-\newenvironment{enabstract}{%
-  \begin{abstract*}%
-}{%
-  \end{abstract*}%
+  \par\null\par\noindent\hangindent=4\ccwd\relax
+  \textbf{Keywords}: \ustc@keywords@en@text\par
+  \ustc@reset@main@language
 }
 
 
@@ -2486,7 +2459,7 @@
 % \subsection{符号说明}
 
 % 研究生规定符号说明另页起，标题字体字号等同论文正文，
-% 《撰写手册》第 9 页 1.10(2) 还规定"符号说明不加页码"。
+% 《撰写手册》第 9 页 1.10(2) 还规定“符号说明不加页码”。
 \newenvironment{notation}{%
   \ifustc@degree@graduate
     \cleardoublepage
@@ -2518,7 +2491,7 @@
 
 % \subsection{正文}
 
-% \cs{sloppy} 可以减少"overfull boxes"。
+% \cs{sloppy} 可以减少“overfull boxes”。
 \sloppy
 
 % 禁止扩大段间距。（\href{https://github.com/ustctug/ustcthesis/issues/209}{
@@ -3066,7 +3039,7 @@
 }
 
 
-% 兼容旧版本中"acknowledgments"的拼法。
+% 兼容旧版本中“acknowledgments”的拼法。
 % Reserved for compatibility until 2020-07-01.
 \newenvironment{acknowledgments}{%
   \begin{acknowledgements}%

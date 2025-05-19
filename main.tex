@@ -2,12 +2,7 @@
 % !TeX program = xelatex
 % !TeX spellcheck = en_US
 
-% Create tmp directory if it doesn't exist
-\makeatletter
-\@ifundefined{tmp}{\immediate\write18{mkdir tmp}}{}
-\makeatother
-
-\documentclass[degree=doctor,language=english]{ustcthesis}
+\documentclass[degree=doctor]{ustcthesis}
 % degree      = doctor | master | bachelor
 % degree-type = academic | professional
 % language    = chinese | english
@@ -15,6 +10,7 @@
 
 % 加载宏包、全部的配置
 \input{ustcsetup.tex}
+
 
 \begin{document}
 
@@ -26,29 +22,22 @@
 \tableofcontents
 % \listoffigures
 % \listoftables
-% \input{chapters/notation.tex}
+\input{chapters/notation.tex}
 
 \mainmatter
 \input{chapters/intro.tex}
-\input{chapters/review.tex}
-\input{chapters/method.tex}
-\input{chapters/results.tex}
-\input{chapters/conclusion.tex}
-\input{chapters/timeline.tex}
-\input{chapters/outcome.tex}
-% \input{chapters/floats.tex}
-% \input{chapters/math.tex}
-% \input{chapters/citations.tex}
+\input{chapters/floats.tex}
+\input{chapters/math.tex}
+\input{chapters/citations.tex}
 
-\bibliographystyle{unsrtnat}
-\bibliography{bib/ref}
+\bibliography{bib/ustc}  % 参考文献使用 BibTeX 编译
 % \printbibliography       % 参考文献使用 BibLaTeX 编译
 
 \appendix
-% \input{chapters/complementary.tex}
+\input{chapters/complementary.tex}
 
 \backmatter
-% \input{chapters/acknowledgements.tex}
-% \input{chapters/publications.tex}
+\input{chapters/acknowledgements.tex}
+\input{chapters/publications.tex}
 
 \end{document}
