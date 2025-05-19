@@ -1,0 +1,52 @@
+# LaTeX临时文件
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+
+# BibTeX/BibLaTeX临时文件
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+# 构建工具临时文件
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+# 编辑器临时文件
+*~
+*.swp
+*.bak
+*.tmp
+
+# 其他可能的编译产出
+# *.pdf
+*.dvi
+*.ps
+*.eps
+*.xdv
+
+# ustcthesis特定临时文件
+*.thm
+*.nav
+*.snm
+*.vrb
+
+# 系统临时文件
+.DS_Store
+Thumbs.db
