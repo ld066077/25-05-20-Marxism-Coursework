@@ -1836,7 +1836,7 @@
 
 % 重定义 \env{titlepage} 环境，不修改页码。
 \renewenvironment{titlepage}{%
-  \cleardoublepage
+  % \cleardoublepage
   \if@twocolumn
     \@restonecoltrue\onecolumn
   \else
@@ -2047,7 +2047,7 @@
   \else
     \ustc@title@page@bachelor
   \fi
-  \cleardoublepage
+  % \cleardoublepage % This line is removed to eliminate the blank page
   \restoregeometry
   \pagestyle{plain}%
 }
