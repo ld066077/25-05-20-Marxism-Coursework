@@ -1,5 +1,21 @@
+# 临时目录
 tmp/*
 !tmp/main.pdf
+
+# LaTeX生成的临时文件
+**/*.aux
+**/*.bbl
+**/*.blg
+**/*.log
+**/*.out
+**/*.toc
+**/*.synctex.gz
+**/*.xdv
+**/*.fls
+**/*.fdb_latexmk
+**/*.dvi
+
+# 确保忽略根目录下的这些文件
 main.aux
 main.bbl
 main.blg
