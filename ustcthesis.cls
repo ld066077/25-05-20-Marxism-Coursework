@@ -1606,7 +1606,7 @@
 % 研究生要求从“中文摘要”开始页码用大写罗马数字，
 % 而本科生的 frontmatter（只有致谢）不编页码，从目录开始页码用阿拉伯数字。
 \renewcommand\frontmatter{%
-  \cleardoublepage
+  % \cleardoublepage
   \@mainmatterfalse
   \pagenumbering{Roman}%
   \ifustc@degree@graduate
@@ -1618,7 +1618,7 @@
 
 % 研究生要求“第 1 章”要另页起，但是本科生要求另面起。
 \renewcommand\mainmatter{%
-  \cleardoublepage
+  % \cleardoublepage
   \ifustc@degree@graduate
     \pagenumbering{arabic}%
   \fi
