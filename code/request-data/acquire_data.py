@@ -55,7 +55,7 @@ try:
         print("未找到 CSV 文件，初始化为空数据集")
 
     # 搜索“求脱单”帖子
-    search_url = 'https://www.xiaohongshu.com/search_result?keyword=求脱单'
+    search_url = 'https://www.xiaohongshu.com/search_result?keyword=[keywordxxx]'
     driver.get(search_url)
     time.sleep(10)  # 等待页面加载
 
@@ -102,7 +102,7 @@ try:
                 education = '未知'
 
                 # 放宽关键词过滤
-                if any(keyword in content.lower() for keyword in ['求脱单', '相亲', '恋爱', '脱单', '找对象', '单身', '择偶']):
+                if any(keyword in content.lower() for keyword in ['xx','xx']):
                     posts.append({
                         'url': full_url,  # 记录唯一标识码
                         'content': content,
